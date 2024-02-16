@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+    <div class="card col-3 m-3" *ngFor="let elemento of elementosFiltrados">
+      <img
+        [src]="elemento.poster_path ? 'https://image.tmdb.org/t/p/w500/' + elemento.backdrop_path : '../../assets/notFound.jpg'"
+        class="card-img-top"
+        alt="Movie Poster"
+      />
+  
+      <div class="card-body">
+        <h5 class="card-title">{{ elemento.title }}</h5>
+        <p class="card-text">{{ elemento.overview }}</p>
+        <p class="card-text">Fecha de Salida: {{ elemento.release_date }}</p>
+  
+        <p
+          class="card-text"
+          [class.text-success]="elemento.vote_average > 8.55"
+        >
+          Puntuación: {{ elemento.vote_average }}
+        </p>
+      </div>
+    </div>
+  </div>
+  

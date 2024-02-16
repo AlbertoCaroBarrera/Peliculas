@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { apiService } from '../services/api.service';
+
 
 @Component({
   selector: 'app-header',
@@ -7,16 +9,13 @@ import { Route, Router } from '@angular/router';
   styleUrl: './app-header.component.scss'
 })
 export class AppHeaderComponent {
+  terminoBusqueda: string = '';
+  constructor(private router: Router,private apiService: apiService) { }
 
-    constructor( private router:Router){}
 
-    changeRoute(evt: MouseEvent, name: string) {
-      evt.preventDefault();
-  
-      let navcfg = [{ outlets: { secondary: name } }];
-  
-      this.router.navigate(navcfg, {
-        skipLocationChange: false,
-      });
-    }
+  buscar() {
+    this.apiService.setTerminoBusqueda(this.terminoBusqueda);
+    console.log(this.terminoBusqueda)
+    this.router.navigate(['/buscador']);
+  }
 }

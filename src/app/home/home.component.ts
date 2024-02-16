@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient, private apiService: apiService) { } 
 
   ngOnInit(): void {
-    this.apiService.getPopularMovies3().subscribe((data: any) => {
+    this.apiService.getPopularMovies().subscribe((data: any) => {
       this.movies = data.results.slice(0, 3);
     });
 

@@ -1,20 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+  <div class="container-fluid">
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="peliculas">Peliculas</a>
-          </li>
-          <form class="d-flex ml-auto">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="peliculas">Peliculas</a>
+        </li>
+        <form class="d-flex" (submit)="buscar()">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="terminoBusqueda" name="searchTerm">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </ul>
     </div>
-  </nav>
-
+  </div>
+</nav>
