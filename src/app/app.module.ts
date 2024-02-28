@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { PeliculasComponent } from './peliculas/peliculas.component';
 import { FilmComponent } from './film/film.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
     HomeComponent,
     PeliculasComponent,
     FilmComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

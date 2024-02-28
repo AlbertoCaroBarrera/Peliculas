@@ -15,7 +15,7 @@ export class AppHeaderComponent {
 
   buscar() {
     this.apiService.setTerminoBusqueda(this.terminoBusqueda);
-    console.log(this.terminoBusqueda)
     this.router.navigate(['/buscador']);
   }
+
 }
