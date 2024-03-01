@@ -45,7 +45,7 @@ export class RegistroComponent {
                 this.router.navigate(['home']);
               },
               error => {
-                console.log("error");
+                console.log(error);
               }
           )
         },

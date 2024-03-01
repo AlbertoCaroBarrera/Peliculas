@@ -12,6 +12,7 @@ import { FilmComponent } from './film/film.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
