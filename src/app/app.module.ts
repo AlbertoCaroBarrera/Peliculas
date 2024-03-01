@@ -11,6 +11,7 @@ import { PeliculasComponent } from './peliculas/peliculas.component';
 import { FilmComponent } from './film/film.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { RegistroComponent } from './registro/registro.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegistroComponent } from './registro/registro.component';
     PeliculasComponent,
     FilmComponent,
     BuscadorComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

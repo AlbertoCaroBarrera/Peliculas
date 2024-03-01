@@ -10,16 +10,21 @@ import { apiService } from '../services/api.service';
 export class BuscadorComponent {
   elementos: any[] = [];
   elementosFiltrados: any[] = [];
+  terminoBusqueda!: string;
   
   constructor(private apiService: apiService) {}
 
   ngOnInit(): void {
-    const terminoBusqueda = this.apiService.terminoBusqueda;
-    this.getMovies(terminoBusqueda); 
+    this.terminoBusqueda = this.apiService.terminoBusqueda;
+    this.getMovies(this.terminoBusqueda); 
   }
 
-
-
+  ngDoCheck () {
+    if(this.terminoBusqueda != this.apiService.terminoBusqueda){
+      this.terminoBusqueda = this.apiService.terminoBusqueda;
+      this.getMovies(this.terminoBusqueda);
+    }
+  }
 
   getMovies(query: string): void {
     this.apiService.getMovies(query).subscribe(data => {
