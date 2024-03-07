@@ -13,6 +13,7 @@ import { TokenService } from '../services/token.service';
 export class LoginComponent {
   nombre: string="";
   password:string="";
+  errorMensaje: string = "";
   constructor(private router: Router,
     private apiService: apiService,
     private registroService: RegistroService,
@@ -27,7 +28,7 @@ export class LoginComponent {
       this.tokenService.setToken(data.access_token);
       this.router.navigate(['home']);
     },error => {
-      console.log(error);
+      this.errorMensaje = "Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.";
     });
 
   }

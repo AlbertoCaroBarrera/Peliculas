@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { apiService } from '../services/api.service';
-import { LoginService } from '../services/login.service';
 import { TokenService } from '../services/token.service';
 
 
@@ -15,7 +14,6 @@ export class AppHeaderComponent {
   NombreUsuario:string = '';
   constructor(private router: Router,
               private apiService: apiService,
-              private loginService: LoginService,
               private tokenService: TokenService,
               ) { }
 

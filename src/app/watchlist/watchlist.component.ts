@@ -27,7 +27,6 @@ export class WatchlistComponent {
   removeFromPending(movieId: number): void {
     this.apiService.removeFromWatchlist(movieId).subscribe(() => {
       this.getWatchlist();
-      alert('La pelicula ha sido elimida.');
     });
   }
 

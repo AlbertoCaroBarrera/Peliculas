@@ -14,7 +14,9 @@
           <ng-template #elseBlock>,</ng-template>
         </span>
       </p>
-      <button class="btn btn-primary m-1" (click)="addToWatchlist(movie.id)">Añadir a watchlist</button>
+      <button *ngIf="tieneToken()" class="btn btn-primary m-1" (click)="inWatchlist ? removeFromPending(movie.id) : addToWatchlist(movie.id)">
+        {{ inWatchlist ? 'Eliminar de la watchlist' : 'Añadir a watchlist' }}
+      </button>
       <a href="peliculas" class="btn btn-primary m-1  ">Ir atrás</a>
     </div>
   </div>
