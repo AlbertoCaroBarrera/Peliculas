@@ -3,6 +3,7 @@ import { Route, Router } from '@angular/router';
 import { apiService } from '../services/api.service';
 import { RegistroService } from '../services/registro.service';
 import { LoginService } from '../services/login.service';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -10,33 +11,24 @@ import { LoginService } from '../services/login.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  nombre: string = "";
-  password: string = "";
+  nombre: string="";
+  password:string="";
   constructor(private router: Router,
     private apiService: apiService,
     private registroService: RegistroService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private tokenService: TokenService
   ) { }
 
   loginFormulario() {
-    const datosRegistro = {
-      username: this.nombre,
-      password1: this.password,
-    };
 
-
-    const datosLogin = {
-      'usuario': datosRegistro['username'],
-      'pass': datosRegistro['password1']
-    }
-    this.loginService.loginUsuario(datosLogin).subscribe(
-      response => {
-        this.router.navigate(['home']);
-      },
-      error => {
-        console.log("error");
-      }
-    )
+    const user = {usuario:this.nombre,pass:this.password}
+    this.loginService.loginUsuario(user).subscribe((data)=>{
+      this.tokenService.setToken(data.access_token);
+      this.router.navigate(['home']);
+    },error => {
+      console.log(error);
+    });
 
   }
 

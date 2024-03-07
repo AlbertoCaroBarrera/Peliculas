@@ -1,27 +1,20 @@
-<div class="row justify-content-center">
-  <div class="col-3 m-4" *ngFor="let movie of popularMovies">
-    <div class="card" style="width: 18rem">
-      <img
-        [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
-        class="card-img-top"
-        alt="Movie Poster"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ movie.title }}</h5>
-        <p class="card-text">{{ movie.overview.slice(0, 120) + "..." }}</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Puntuacion: {{ movie.vote_average }}</li>
-        <li class="list-group-item">
-          Fecha de lanzamiento: {{ movie.release_date }}
-        </li>
-      </ul>
-      <div class="card-body">
-        <a
-          [routerLink]="['/film/',movie.id]"
-          class="card-link"
-          >Detalles</a
-        >
+<div class="container mt-5">
+  <h2 class="text-center mb-5">Películas Populares</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-4" *ngFor="let movie of popularMovies">
+      <div class="card h-100">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" alt="Movie Poster">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <p class="card-text">{{ movie.overview.slice(0, 120) + "..." }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Puntuación:</strong> {{ movie.vote_average }}</li>
+          <li class="list-group-item"><strong>Fecha de lanzamiento:</strong> {{ movie.release_date }}</li>
+        </ul>
+        <div class="card-footer d-flex justify-content-center">
+          <a [routerLink]="['/film/', movie.id]" class="btn btn-secondary">Detalles</a>
+        </div>
       </div>
     </div>
   </div>

@@ -8,9 +8,10 @@ import {HttpParams} from "@angular/common/http";
   providedIn: 'root'
 })
 export class LoginService {
-  private token_url = 'http://127.0.0.1:8080/oauth2/token/';
+  private token_url = 'http://albertwok.pythonanywhere.com/oauth2/token/';
+  //private token_url = 'http://127.0.0.1:8080/oauth2/token/';
 
-  
+
 
   constructor(private http: HttpClient) { }
 
@@ -34,5 +35,6 @@ export class LoginService {
       );
   }
 
-
 }
+
+

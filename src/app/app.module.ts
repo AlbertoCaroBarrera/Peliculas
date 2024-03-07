@@ -12,7 +12,8 @@ import { FilmComponent } from './film/film.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
-import { LoginService } from './services/login.service';
+import { CookieService } from "ngx-cookie-service";
+import { WatchlistComponent } from './watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginService } from './services/login.service';
     FilmComponent,
     BuscadorComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    WatchlistComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { LoginService } from './services/login.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginService],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

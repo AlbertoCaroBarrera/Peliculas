@@ -1,0 +1,11 @@
+.nav-link.btn.btn-outline-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.nav-link.btn.btn-outline-primary:hover {
+    color: black;
+    background-color: #0275f0;
+    border-color: #0275f0;
+}

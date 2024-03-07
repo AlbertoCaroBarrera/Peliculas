@@ -7,7 +7,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RegistroService {
-  private apiUrl = 'http://127.0.0.1:8080/api/v1/registrar/usuario';
+  private apiUrl = 'http://albertwok.pythonanywhere.com/api/v1/registrar/usuario';
+  //private apiUrl = 'http://127.0.0.1:8080/api/v1/registrar/usuario';
 
   constructor(private http: HttpClient) { }
 

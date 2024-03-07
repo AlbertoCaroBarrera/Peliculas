@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="card col-3 m-3" *ngFor="let elemento of elementosFiltrados">
       <img
-        [src]="elemento.poster_path ? 'https://image.tmdb.org/t/p/w500/' + elemento.backdrop_path : '../../assets/notFound.jpg'"
+        [src]="elemento.poster_path ? 'https://image.tmdb.org/t/p/w500/' + elemento.poster_path : '../../assets/notFound.jpg'"
         class="card-img-top"
         alt="Movie Poster"
       />
@@ -17,6 +17,9 @@
         >
           Puntuación: {{ elemento.vote_average }}
         </p>
+        <div class="d-flex justify-content-center">
+          <a [routerLink]="['/film/', elemento.id]" class="btn btn-secondary">Detalles</a>
+        </div>
       </div>
     </div>
   </div>
